@@ -47,7 +47,7 @@ export default function Home() {
           </h3>
         </div>
 
-        {/* Casino Cards */}
+        {/* Casino Card */}
         <div className="space-y-3 sm:space-y-4 lg:space-y-6 max-w-6xl mx-auto">
           {casinos.map((casino) => (
             <CasinoCard key={casino.id} casino={casino} />
