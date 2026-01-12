@@ -40,7 +40,7 @@ const casinosRawData: CasinoRawData[] = [
 
   {
     name: "VegasHero",
-    logo: "/vegasHero.png",
+    logo: "/VegasHero.png",
     bonus: "300% up to €500 + 300 FS",
     url: "https://any-site1.com/sF24tnhr",
     isMobile: true
