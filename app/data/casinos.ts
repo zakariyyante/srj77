@@ -60,17 +60,17 @@ const casinosRawData: CasinoRawData[] = [
     isMobile: true
   },
   {
-    name: "SlotsCharm",
-    logo: "/slotscharm.svg",
-    bonus: "375% + 300 FS",
-    url: "https://any-site1.com/PQYz23Yc",
-    isMobile: true
-  },
-  {
     name: "VegasHero",
     logo: "/VegasHero.png",
     bonus: "300% up to €500 + 300 FS",
     url: "https://any-site1.com/sF24tnhr",
+    isMobile: true
+  },
+  {
+    name: "SlotsCharm",
+    logo: "/slotscharm.svg",
+    bonus: "375% + 300 FS",
+    url: "https://any-site1.com/PQYz23Yc",
     isMobile: true
   },
   {
