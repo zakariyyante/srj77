@@ -30,28 +30,37 @@ const topBadges = ["Best Bonus", "Top Pick", "Trending Now"];
 ///
 // Raw casino data without id, rating, and badge
 const casinosRawData: CasinoRawData[] = [
-  //
-  // {
-  //   name: "HotLoot",
-  //   logo: "/hotloot.svg",
-  //   bonus: "250% UP TO €2.500 + 100 FS",
-  //   url: "https://any-site1.com/YTpqyz6h",
-  //   isMobile: true
-  // },
-  // {
-  //   name: "Agent No Wager",
-  //   logo: "/agentnowager.svg",
-  //   bonus: "Up to 90 FS + 45% Without Wager!",
-  //   url: "https://any-site1.com/ht2pbwVK",
-  //   isMobile: true
-  // },
-  // {
-  //   name: "Lizaro",
-  //   logo: "/lizaro.png",
-  //   bonus: "350% up to £680 + 200 FS",
-  //   url: "https://any-site1.com/hhbHzRbC",
-  //   isMobile: true
-  // },
+  {
+    name: "Lizaro",
+    logo: "/lizaro.png",
+    bonus: "350% up to £680 + 200 FS",
+    url: "https://any-site1.com/hhbHzRbC",
+    isMobile: true
+  },
+  {
+    name: "VegasHero",
+    logo: "/VegasHero.png",
+    bonus: "300% up to €500 + 300 FS",
+    url: "https://any-site1.com/sF24tnhr",
+    isMobile: true
+  },
+  {
+    name: "Agent No Wager",
+    logo: "/agentnowager.svg",
+    bonus: "Up to 90 FS + 45% Without Wager!",
+    url: "https://any-site1.com/ht2pbwVK",
+    isMobile: true
+  },
+
+  {
+    name: "HotLoot",
+    logo: "/hotloot.svg",
+    bonus: "250% UP TO €2.500 + 100 FS",
+    url: "https://any-site1.com/YTpqyz6h",
+    isMobile: true
+  },
+
+
   // {
   //   name: "SlotsCharm",
   //   logo: "/slotscharm.svg",
@@ -59,13 +68,7 @@ const casinosRawData: CasinoRawData[] = [
   //   url: "https://any-site1.com/PQYz23Yc",
   //   isMobile: true
   // },
-  // {
-  //   name: "VegasHero",
-  //   logo: "/VegasHero.png",
-  //   bonus: "300% up to €500 + 300 FS",
-  //   url: "https://any-site1.com/sF24tnhr",
-  //   isMobile: true
-  // },
+
   // {
   //   name: "Lucky Mister",
   //   logo: "/luckymister.svg",
