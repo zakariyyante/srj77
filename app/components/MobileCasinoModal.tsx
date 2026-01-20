@@ -3,6 +3,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Casino } from '../data/casinos';
 import CasinoCard from './CasinoCard';
+import Header from './Header';
+import Footer from './Footer';
 
 interface MobileCasinoModalProps {
   mobileCasinos: Casino[];
@@ -39,14 +41,17 @@ export default function MobileCasinoModal({ mobileCasinos }: MobileCasinoModalPr
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm overflow-y-auto">
       <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+        {/* Header - Menu bar at top */}
+        <Header />
+
         {/* Hero Section */}
-        <div className="sticky top-0 z-20 bg-gradient-to-r from-purple-900/95 to-slate-900/95 backdrop-blur-sm border-b border-purple-500/30 px-4 sm:px-6 py-6 sm:py-8">
+        <div className="bg-gradient-to-r from-purple-900/95 to-slate-900/95 border-b border-purple-500/30 px-4 sm:px-6 py-6 sm:py-8">
           <div className="container mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-yellow-400 mb-3 sm:mb-4">
               🎰 New Casino Sites with Fast Withdrawal 2026
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-300">
-              Check the best slots games at new casinos with instant fast withdrawal and top bonuses
+              Check the best casinos in UK
             </p>
           </div>
         </div>
@@ -70,6 +75,9 @@ export default function MobileCasinoModal({ mobileCasinos }: MobileCasinoModalPr
             </p>
           </div>
         </div>
+
+        {/* Footer */}
+        <Footer />
       </div>
     </div>
   );
