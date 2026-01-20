@@ -104,7 +104,7 @@ const casinosRawData: CasinoRawData[] = [
     name: "Karamba",
     logo: "/karamba.svg",
     bonus: "100% Bonus up to £200 + 20 Free Spins",
-    url: "https://www.karamba.com"
+    url: "https://www.karamba.co.uk/lp/wo-300-spins?asys=cexp&affid=40838&AffiliateID=cx-40838_717172&cxd=cx-40838_717172&afi=28080&ar=&gclid=&lpr=%5Bafp2%5D&mmi=%5Bafp5%5D&MSCLKID=%5BMSCLKID%5D&utm_content=40838"
   },
   // {
   //   name: "Coral Casino",
