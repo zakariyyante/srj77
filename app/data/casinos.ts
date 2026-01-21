@@ -45,6 +45,13 @@ const casinosRawData: CasinoRawData[] = [
     isMobile: true
   },
   {
+    name: "Lizaro",
+    logo: "/lizaro.png",
+    bonus: "350% up to £680 + 200 FREE SPINS",
+    url: "https://any-site1.com/hhbHzRbC",
+    isMobile: true
+  },
+  {
     name: "AmonBet",
     logo: "/amonbet.svg",
     bonus: "100% up to 1,000£ + 100 FREE SPINS",
@@ -58,13 +65,7 @@ const casinosRawData: CasinoRawData[] = [
     url: "https://any-site1.com/m5Cn7JWD",
     isMobile: true
   },
-  {
-    name: "Lizaro",
-    logo: "/lizaro.png",
-    bonus: "350% up to £680 + 200 FREE SPINS",
-    url: "https://any-site1.com/hhbHzRbC",
-    isMobile: true
-  },
+
 
 
   // {
