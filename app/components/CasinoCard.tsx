@@ -95,12 +95,16 @@ export default function CasinoCard({ casino, badge }: CasinoCardProps) {
           </div>
         </div>
 
-        {/* Rating - Right */}
+      {/* Rating - Right */}
         <div className="flex flex-col items-end">
-          <span className="text-white text-3xl font-bold mb-1">
-            {casino.rating.toFixed(1)}
-          </span>
-          {renderStars(casino.rating)}
+          <div className="bg-[#FF4500] rounded-lg px-4 py-2 shadow-md">
+            <span className="text-white text-3xl font-bold mb-1 block text-center">
+              {casino.rating.toFixed(1)}
+            </span>
+            <div className="flex justify-center">
+              {renderStars(casino.rating)}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -134,9 +138,9 @@ export default function CasinoCard({ casino, badge }: CasinoCardProps) {
           event.stopPropagation();
           handleCasinoClick();
         }}
-        className="block w-full bg-gradient-to-r from-orange-600 to-orange-500 text-white font-bold py-4 px-6 rounded-2xl text-center text-base sm:text-lg uppercase shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+        className="bg-[#FF4500] block w-full bg-gradient-to-r  text-white font-bold py-4 px-6 rounded-2xl text-center text-base sm:text-lg uppercase shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
       >
-        Check Now
+        Claim Bonus
         <ArrowRight className="w-5 h-5" />
       </a>
     </div>
