@@ -38,10 +38,10 @@ const casinosRawData: CasinoRawData[] = [
     isMobile: true
   },
   {
-    name: "VegasHero",
-    logo: "/VegasHero.png",
-    bonus: "300% up to €500 + 300 FREE SPINS",
-    url: "https://any-site1.com/sF24tnhr",
+    name: "SlotsCharm",
+    logo: "/slotscharm.svg",
+    bonus: "375% up to £3000 + 300 FREE SPINS",
+    url: "https://any-site1.com/PQYz23Yc",
     isMobile: true
   },
   {
@@ -52,12 +52,26 @@ const casinosRawData: CasinoRawData[] = [
     isMobile: true
   },
   {
-    name: "LuckyWave",
-    logo: "/luckywave.svg",
-    bonus: "100% UP TO 2,000 €/£ + 200 FREE SPINS",
-    url: "https://any-site1.com/m5Cn7JWD",
+    name: "LegionBet",
+    logo: "/legionbet.svg",
+    bonus: "250% up to £13000 + 300 FREE SPINS",
+    url: "https://any-site1.com/K7w9ctrg",
     isMobile: true
   },
+  {
+    name: "VegasHero",
+    logo: "/VegasHero.png",
+    bonus: "300% up to €500 + 300 FREE SPINS",
+    url: "https://any-site1.com/sF24tnhr",
+    isMobile: true
+  },
+  // {
+  //   name: "LuckyWave",
+  //   logo: "/luckywave.svg",
+  //   bonus: "100% UP TO 2,000 €/£ + 200 FREE SPINS",
+  //   url: "https://any-site1.com/m5Cn7JWD",
+  //   isMobile: true
+  // },
 
 
   // {
@@ -119,13 +133,7 @@ const casinosRawData: CasinoRawData[] = [
   // },
 
 
-  // {
-  //   name: "SlotsCharm",
-  //   logo: "/slotscharm.svg",
-  //   bonus: "375% + 300 FS",
-  //   url: "https://any-site1.com/PQYz23Yc",
-  //   isMobile: true
-  // },
+
 
   // {
   //   name: "Lucky Mister",
