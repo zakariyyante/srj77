@@ -31,19 +31,20 @@ const topBadges = ["Best Bonus", "Top Pick", "Trending Now"];
 // Raw casino data without id, rating, and badge
 const casinosRawData: CasinoRawData[] = [
   {
-    name: "Lizaro",
-    logo: "/lizaro.png",
-    bonus: "350% up to £680 + 200 FREE SPINS",
-    url: "https://any-site1.com/hhbHzRbC",
-    isMobile: true
-  },
-  {
     name: "RollySpin",
     logo: "/RollySpin.svg",
     bonus: "200% up to 1,000£ + 50 FREE SPINS",
     url: "https://any-site1.com/znYjBPcw",
     isMobile: true
   },
+  {
+    name: "Lizaro",
+    logo: "/lizaro.png",
+    bonus: "350% up to £680 + 200 FREE SPINS",
+    url: "https://any-site1.com/hhbHzRbC",
+    isMobile: true
+  },
+
   {
     name: "CasinoPrestige",
     logo: "/prestige.svg",
@@ -52,12 +53,19 @@ const casinosRawData: CasinoRawData[] = [
     isMobile:true
   },
   {
-    name: "Agent No Wager",
-    logo: "/agentnowager.svg",
-    bonus: "Up to 90 FREE SPINS + 45% Without Wager!",
-    url: "https://any-site1.com/ht2pbwVK",
+    name: "DaffSpin",
+    logo: "/daffspin.png",
+    bonus: "HIGHROLLER BONUS +50% Up to 500£",
+    url: "https://any-site1.com/zGmF9Yvq",
     isMobile: true
   },
+  // {
+  //   name: "Agent No Wager",
+  //   logo: "/agentnowager.svg",
+  //   bonus: "Up to 90 FREE SPINS + 45% Without Wager!",
+  //   url: "https://any-site1.com/ht2pbwVK",
+  //   isMobile: true
+  // },
   // {
   //   name: "SlotsCharm",
   //   logo: "/slotscharm.svg",
