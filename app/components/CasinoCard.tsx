@@ -64,11 +64,11 @@ export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
   };
 
   // Default payment methods - can be made configurable later
-  const paymentMethods = ['PayPal', 'Visa Debit', 'Mastercard Debit', 'Skrill'];
+  const paymentMethods = ['Apple Pay','Google Pay','PayPal', 'Visa Debit', 'Mastercard Debit', 'Skrill'];
 
   return (
     <div
-      className="relative bg-zinc-900 rounded-3xl p-7 sm:p-8 shadow-lg border border-white/10 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+      className="relative bg-zinc-900 rounded-2xl p-4 sm:p-5 shadow-lg border border-white/10 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
       role="link"
       tabIndex={0}
       onClick={handleCardClick}
@@ -76,7 +76,7 @@ export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
     >
       {/* Badge - Above Logo */}
       {badge && (
-        <div className="mb-4">
+        <div className="mb-2">
           <span
             className={`inline-block rounded-full px-3 py-1 text-[11px] font-extrabold tracking-wide ring-1 ${
               badge === 'gold' 
@@ -92,9 +92,9 @@ export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
       )}
 
       {/* Top Section: Logo and Rating */}
-      <div className="flex items-start justify-between mb-6">
+      <div className="flex items-start justify-between mb-3">
         {/* Logo - Left */}
-        <div className="w-36 h-20 sm:w-40 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 overflow-hidden p-2">
+        <div className="w-32 h-14 sm:w-36 sm:h-16 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 overflow-hidden p-2">
           <div className="w-full h-full flex items-center justify-center [&>svg]:text-white [&>svg]:fill-white">
             {renderLogo()}
           </div>
@@ -102,8 +102,8 @@ export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
 
       {/* Rating - Right */}
         <div className="flex flex-col items-end">
-          <div className="bg-emerald-500/20 border border-emerald-500/30 rounded-2xl px-4 py-2 shadow-sm">
-            <span className="text-emerald-400 text-3xl font-extrabold mb-1 block text-center">
+          <div className="bg-emerald-500/20 border border-emerald-500/30 rounded-xl px-3 py-1.5 shadow-sm">
+            <span className="text-emerald-400 text-2xl font-extrabold block text-center">
               {casino.rating.toFixed(1)}
             </span>
             <div className="flex justify-center">
@@ -115,8 +115,8 @@ export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
       </div>
 
       {/* Bonus Offer - Centered */}
-      <div className="text-center mb-6">
-        <p className="text-white font-semibold text-base sm:text-lg uppercase leading-tight">
+      <div className="text-center mb-3">
+        <p className="text-white font-semibold text-sm sm:text-base uppercase leading-tight">
           {casino.bonus}
         </p>
       </div>
@@ -136,12 +136,12 @@ export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
       {/*</div>*/}
 
       {/* Payment Methods - Scrollable Row */}
-      <div className="mt-3 flex justify-center mb-6">
-        <div className="flex max-w-full gap-2 overflow-x-auto no-scrollbar px-1 py-1">
+      <div className="mt-2 flex justify-center mb-3">
+        <div className="flex max-w-full gap-1.5 overflow-x-auto no-scrollbar px-1 py-1">
           {paymentMethods.map((method) => (
             <span
               key={method}
-              className="whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/80"
+              className="whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-semibold text-white/80"
             >
               {method}
             </span>
@@ -158,13 +158,13 @@ export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
           event.stopPropagation();
           handleCasinoClick();
         }}
-        className="block w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white font-bold py-4 px-6 rounded-2xl text-center text-base sm:text-lg uppercase shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+        className="block w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white font-bold py-3 px-4 rounded-xl text-center text-sm sm:text-base uppercase shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
       >
         {/*{gclid ? "Claim Bonus": "Play Now"}*/}
         Check Now
-        <ArrowRight className="w-5 h-5" />
+        <ArrowRight className="w-4 h-4" />
       </a>
-      {gclid &&  <div className="mt-5 flex items-center justify-center gap-6 text-gray-400 text-sm font-semibold">
+      {gclid &&  <div className="mt-3 flex items-center justify-center gap-4 text-gray-400 text-xs font-semibold">
         <span className="flex items-center gap-2">
           <Check className="w-4 h-4 text-emerald-400" />
           Instant Deposits

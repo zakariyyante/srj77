@@ -42,17 +42,17 @@ export default function MobileCasinoModal({ mobileCasinos }: MobileCasinoModalPr
     <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm overflow-y-auto">
       <div className="w-full min-h-screen bg-black">
         {/* Header - Menu bar at top */}
-        <Header />
+        {/*<Header />*/}
 
 
 
         {/* Hero Section */}
-        <div className="bg-gray-800 border-b border-white/10 px-4 sm:px-6 py-4 sm:py-6 backdrop-blur">
+        <div className="bg-gray-800 border-b border-white/10 px-4 sm:px-6 py-2 sm:py-3 backdrop-blur">
           <div className="container mx-auto text-center">
-            <h2 className="text-xl sm:text-2xl lg:text-4xl font-extrabold text-white mb-2">
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-white mb-1">
               🎰 New Casino Sites 2026
             </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-gray-400">
+            <p className="text-xs sm:text-sm lg:text-base text-gray-400">
               Check the best casinos in UK
             </p>
           </div>
@@ -61,7 +61,7 @@ export default function MobileCasinoModal({ mobileCasinos }: MobileCasinoModalPr
 
         {/* Content */}
         <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-4 max-w-6xl mx-auto">
             {updatedCasinos.map((casino, index) => (
               <CasinoCard
                 gclid={true}
