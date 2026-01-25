@@ -119,7 +119,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-4 sm:pt-6 text-center mt-6">
           <p className="text-gray-500 text-xs sm:text-sm">
-            © 2026 casinouk2026.com. For educational purposes only. 18+ only. Please gamble responsibly.
+            © 2026 ukgamblings.com. For educational purposes only. 18+ only. Please gamble responsibly.
           </p>
         </div>
       </div>
