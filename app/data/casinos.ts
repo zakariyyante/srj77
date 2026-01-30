@@ -59,13 +59,6 @@ const casinosRawData: CasinoRawData[] = [
     url: "https://any-site1.com/m5Cn7JWD",
     isMobile: true
   },
-  {
-    name: "LegionBet",
-    logo: "/legionbet.svg",
-    bonus: "250% up to £13000 + 300 FREE SPINS",
-    url: "https://any-site1.com/K7w9ctrg",
-    isMobile: true
-  },
 
 
 
