@@ -125,7 +125,7 @@ export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
           }}
           className="block w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-400 hover:via-teal-400 hover:to-cyan-400 text-white font-bold py-3 px-4 rounded-xl text-sm uppercase shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
         >
-          Play Now
+          PLAY HERE
           <ArrowRight className="w-4 h-4" />
         </a>
         {gclid && (
