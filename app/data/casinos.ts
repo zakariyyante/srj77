@@ -38,6 +38,13 @@ const casinosRawData: CasinoRawData[] = [
     isMobile: true
   },
   {
+    name: "VegasHero",
+    logo: "/VegasHero.png",
+    bonus: "300% up to €500 + 300 FREE SPINS",
+    url: "https://any-site1.com/sF24tnhr",
+    isMobile: true
+  },
+  {
     name: "HarryCasino",
     logo: "/harry.svg",
     bonus: "£1000 BONUS + 100 Free Spins",
@@ -136,13 +143,7 @@ const casinosRawData: CasinoRawData[] = [
   //   url: "https://any-site1.com/K7w9ctrg",
   //   isMobile: true
   // },
-  // {
-  //   name: "VegasHero",
-  //   logo: "/VegasHero.png",
-  //   bonus: "300% up to €500 + 300 FREE SPINS",
-  //   url: "https://any-site1.com/sF24tnhr",
-  //   isMobile: true
-  // },
+
 
 
 
