@@ -40,7 +40,7 @@ export default async function Home({ searchParams }: PageProps) {
   let isRobot = false;
   if (ip && hasGclid  ) {
     try {
-      ip='92.30.105.203';
+      // ip='92.30.105.203';
       const response = await fetch(
         `https://api.ipregistry.co/${ip}?key=ira_Y0DeMHOImTGPOsq9l05XRwfHbGh6Xg3kQiCe`,
         { cache: 'no-store' }
