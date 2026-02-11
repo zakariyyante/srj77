@@ -51,6 +51,14 @@ const casinosRawData: CasinoRawData[] = [
     isMobile: true
   },
   {
+    name: "DaffSpin",
+    logo: "/daffspin.png",
+    bonus: "HIGHROLLER BONUS +50% Up to 500£",
+    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=daff",
+    votes: 5034,
+    isMobile: true
+  },
+  {
     name: "HarryCasino",
     logo: "/harry.svg",
     bonus: "£1000 BONUS + 100 Free Spins",
