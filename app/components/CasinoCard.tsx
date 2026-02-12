@@ -137,7 +137,8 @@ export default function CasinoCard({ casino, rank, badge, isOnline = false }: Ca
         }}
         className="block w-full bg-gradient-to-r from-red-600 via-red-600 to-red-700 text-white font-extrabold py-3.5 px-4 rounded-xl text-sm uppercase shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
       >
-        {isOnline ? 'Claim Bonus' : 'Play Now'}
+        {/*{isOnline ? 'Claim Bonus' : 'Play Now'}*/}
+        Play Now
         <ArrowRight className="w-4 h-4" />
         {isOnline ? <span aria-hidden="true" className="text-xl">💰</span> : ''}
       </a>
