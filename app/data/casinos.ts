@@ -48,6 +48,16 @@ const casinosRawData: CasinoRawData[] = [
     votes: 3986,
     isMobile: true
   },
+
+  {
+    name: "DaffSpin",
+    logo: "/daffspin.png",
+    bonus: "100% Bonus Up To 500 £ + 50 Free Spins",
+    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=daff",
+    votes: 5034,
+    isMobile: true
+  },
+
   // {
   //   name: "SpinShark",
   //   logo: "/spinshark.svg",
@@ -67,15 +77,6 @@ const casinosRawData: CasinoRawData[] = [
   // },
 
 
-
-  // {
-  //   name: "DaffSpin",
-  //   logo: "/daffspin.png",
-  //   bonus: "100% Bonus Up To 500 £ + 50 Free Spins",
-  //   url: "https://topbritcasinos.com/B7W2b6jr?utm_target=daff",
-  //   votes: 5034,
-  //   isMobile: true
-  // },
 
 
 
