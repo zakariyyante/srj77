@@ -32,20 +32,21 @@ const topBadges = ["Best Bonus", "Top Pick", "Trending Now"];
 
 // Raw casino data without id, rating, and badgess
 const casinosRawData: CasinoRawData[] = [
-  {
-    name: "VegasHero",
-    logo: "/VegasHero.png",
-    bonus: "125% up to £1,250 + 250 Free Spins",
-    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=vegas",
-    votes: 6440,
-    isMobile: true
-  },
+
   {
     name: "BetNinja",
     logo: "/BetNinja.png",
     bonus: "£1000 + 100 Free Spins",
     url: "https://topbritcasinos.com/B7W2b6jr?utm_target=betninja",
     votes: 4915,
+    isMobile: true
+  },
+  {
+    name: "SpinShark",
+    logo: "/spinshark.svg",
+    bonus: "£900 BONUS + 150 Free Spins",
+    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=spinshark",
+    votes: 4143,
     isMobile: true
   },
 
@@ -57,24 +58,24 @@ const casinosRawData: CasinoRawData[] = [
     votes: 3986,
     isMobile: true
   },
-  //
+
+  {
+    name: "DaffSpin",
+    logo: "/daffspin.png",
+    bonus: "100% Bonus Up To 500 £ + 50 Free Spins",
+    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=daff",
+    votes: 5034,
+    isMobile: true
+  },
   // {
-  //   name: "DaffSpin",
-  //   logo: "/daffspin.png",
-  //   bonus: "100% Bonus Up To 500 £ + 50 Free Spins",
-  //   url: "https://topbritcasinos.com/B7W2b6jr?utm_target=daff",
-  //   votes: 5034,
+  //   name: "VegasHero",
+  //   logo: "/VegasHero.png",
+  //   bonus: "125% up to £1,250 + 250 Free Spins",
+  //   url: "https://topbritcasinos.com/B7W2b6jr?utm_target=vegas",
+  //   votes: 6440,
   //   isMobile: true
   // },
 
-  // {
-  //   name: "SpinShark",
-  //   logo: "/spinshark.svg",
-  //   bonus: "£900 BONUS + 150 Free Spins",
-  //   url: "https://topbritcasinos.com/B7W2b6jr?utm_target=spinshark",
-  //   votes: 4143,
-  //   isMobile: true
-  // },
   // {
   //   name: "Lizaro",
   //   logo: "/lizaro.png",
