@@ -32,15 +32,6 @@ const topBadges = ["Best Bonus", "Top Pick", "Trending Now"];
 
 // Raw casino data without id, rating, and badgess
 const casinosRawData: CasinoRawData[] = [
-
-  {
-    name: "BetNinja",
-    logo: "/BetNinja.png",
-    bonus: "£1000 + 100 Free Spins",
-    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=betninja",
-    votes: 4915,
-    isMobile: true
-  },
   {
     name: "SpinFin",
     logo: "/spinfin.svg",
@@ -49,6 +40,15 @@ const casinosRawData: CasinoRawData[] = [
     votes: 4915,
     isMobile: true
   },
+  {
+    name: "BetNinja",
+    logo: "/BetNinja.png",
+    bonus: "£1000 + 100 Free Spins",
+    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=betninja",
+    votes: 4915,
+    isMobile: true
+  },
+
   {
     name: "Qbet",
     logo: "/qbet.svg",
