@@ -40,15 +40,7 @@ const casinosRawData: CasinoRawData[] = [
     votes: 4143,
     isMobile: true
   },
-  {
-    name: "Lizaro",
-    logo: "/lizaro.png",
-    // bonus: "350% up to £680 + 200 FREE SPINS",
-    bonus: "200% up to £1000 + 250 FREE SPINS",
-    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=lizaro",
-    votes: 5872,
-    isMobile: true
-  },
+
   {
     name: "BetNinja",
     logo: "/BetNinja.png",
@@ -57,6 +49,7 @@ const casinosRawData: CasinoRawData[] = [
     votes: 4915,
     isMobile: true
   },
+
   {
     name: "HarryCasino",
     logo: "/harry.svg",
@@ -64,6 +57,15 @@ const casinosRawData: CasinoRawData[] = [
     url: "https://topbritcasinos.com/B7W2b6jr?utm_target=harry",
     votes: 3951,
     isMobile:true
+  },
+  {
+    name: "Lizaro",
+    logo: "/lizaro.png",
+    // bonus: "350% up to £680 + 200 FREE SPINS",
+    bonus: "200% up to £1000 + 250 FREE SPINS",
+    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=lizaro",
+    votes: 5872,
+    isMobile: true
   },
 
 
