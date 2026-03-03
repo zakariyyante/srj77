@@ -134,20 +134,20 @@ export default function CasinoCard({ casino, rank, badge, isOnline = false }: Ca
         </div>
       </div>
 
-      {/*{isOnline && (*/}
-      {/*  <div className="flex justify-center mb-4">*/}
-      {/*    <div className="flex max-w-full gap-2 overflow-x-auto no-scrollbar">*/}
-      {/*      {paymentMethods.map((method) => (*/}
-      {/*        <span*/}
-      {/*          key={method}*/}
-      {/*          className="whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-medium text-white/80"*/}
-      {/*        >*/}
-      {/*          {method}*/}
-      {/*        </span>*/}
-      {/*      ))}*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*)}*/}
+      {isOnline && (
+        <div className="flex justify-center mb-4">
+          <div className="flex max-w-full gap-2 overflow-x-auto no-scrollbar">
+            {paymentMethods.map((method) => (
+              <span
+                key={method}
+                className="whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-medium text-white/80"
+              >
+                {method}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
 
       <a
         href={casino.url}
