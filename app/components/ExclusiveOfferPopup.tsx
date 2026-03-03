@@ -119,11 +119,11 @@ export default function ExclusiveOfferPopup({ casino, isOnline, gclidValue = '',
             {/* <p className="text-white font-extrabold text-xl sm:text-2xl leading-tight">
               {casino.bonus.split('+')[0]}
             </p> */}
-            {casino.bonus.includes('+') && (
-              <p className="text-white font-extrabold text-lg sm:text-xl whitespace-nowrap bg-red-600/20 border border-red-600/40 px-2 py-0.5 rounded-md inline-block">
-                {casino.bonus}
-              </p>
-            )}
+          {casino.bonus.includes('+') && (
+            <p className="text-white font-extrabold text-lg sm:text-xl bg-red-600/20 border border-red-600/40 px-2 py-0.5 rounded-md inline-block whitespace-normal break-words text-center">
+              {casino.bonus}
+            </p>
+          )}
           </div>
 
           <div className="flex items-center justify-center gap-2 mb-6">
