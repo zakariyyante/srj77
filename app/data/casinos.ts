@@ -44,7 +44,7 @@ const casinosRawData: CasinoRawData[] = [
     name: "Lizaro",
     logo: "/lizaro.png",
     bonus: "200% up to £1000 + 250 FREE SPINS",
-    url: "https://lizaro.tenmilenwe.pro?sub_id_1=t4p6a0wbej43uo&utm_source=lizaro1",
+    url: "https://lizaro.tenmilenwe.pro?sub_id_1=t4p6a0wbej43uo&utm_source=lizaro",
     votes: 5872,
     isMobile: true
   },
@@ -52,7 +52,7 @@ const casinosRawData: CasinoRawData[] = [
     name: "GQbet",
     logo: "/gqbet.gif",
     bonus: "Enjoy a Welcome Bonus £500 + 100 FREE SPINS",
-    url: "https://gqbet.sedeciassls.live?sub_id_1=t4p6a0wbej43uo&utm_source=gqbet",
+    url: "https://gqbet.tenmilenwe.pro?sub_id_1=t4p6a0wbej43uo&utm_source=gqbet",
     votes: 1997,
     isMobile: true
   },
@@ -62,7 +62,7 @@ const casinosRawData: CasinoRawData[] = [
     name: "HarryCasino",
     logo: "/harry.svg",
     bonus: "£1000 BONUS + 100 Free Spins",
-    url: "https://harry.sedeciassls.live?sub_id_1=t4p6a0wbej43uo&utm_source=harry",
+    url: "https://harry.tenmilenwe.pro?sub_id_1=t4p6a0wbej43uo&utm_source=harry",
     votes: 3951,
     isMobile:true
   },
