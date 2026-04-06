@@ -40,15 +40,15 @@ const casinosRawData: CasinoRawData[] = [
     votes: 5872,
     isMobile: true
   },
-  //
-  // {
-  //   name: "Westace",
-  //   logo: "/westace.webp",
-  //   bonus: "300% UP TO €2000 + 150 FS",
-  //   url: "https://daytona.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=daytona",
-  //   votes: 5872,
-  //   isMobile: true
-  // },
+
+  {
+    name: "Westace",
+    logo: "/westace.webp",
+    bonus: "300% UP TO €2000 + 150 FS",
+    url: "https://westace.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=westace",
+    votes: 5872,
+    isMobile: true
+  },
 
   // {
   //   name: "30Bet",
@@ -66,14 +66,14 @@ const casinosRawData: CasinoRawData[] = [
   //   votes: 1997,
   //   isMobile: true
   // },
-  {
-    name: "OdinFortune",
-    logo: "/odinfortune.png",
-    bonus: "Up to €4,000 + 700 FS",
-    url: "https://odinfortune.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=odinfortune",
-    votes: 5872,
-    isMobile: true
-  },
+  // {
+  //   name: "OdinFortune",
+  //   logo: "/odinfortune.png",
+  //   bonus: "Up to €4,000 + 700 FS",
+  //   url: "https://odinfortune.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=odinfortune",
+  //   votes: 5872,
+  //   isMobile: true
+  // },
   {
     name: "Sankra",
     logo: "/sankra.svg",
