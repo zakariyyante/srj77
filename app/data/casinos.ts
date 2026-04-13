@@ -33,14 +33,6 @@ const topBadges = ["Best Bonus", "Top Pick", "Trending Now"];
 // Raw casino data without id, rating, and badgessss
 const casinosRawData: CasinoRawData[] = [
   {
-    name: "Lolajack",
-    logo: "/lolajack.webp",
-    bonus: "400% UP TO €15,000 + 400 FREE SPINS",
-    url: "https://lolajack.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=lolajack",
-    votes: 5872,
-    isMobile: true
-  },
-  {
     name: "Daytona",
     logo: "/daytonaspin.svg",
     bonus: "255% UP TO £4500 + 255 FREE SPINS",
@@ -48,6 +40,7 @@ const casinosRawData: CasinoRawData[] = [
     votes: 5872,
     isMobile: true
   },
+
   {
     name: "Westace",
     logo: "/westace.webp",
@@ -56,6 +49,15 @@ const casinosRawData: CasinoRawData[] = [
     votes: 5872,
     isMobile: true
   },
+  {
+    name: "Lolajack",
+    logo: "/lolajack.webp",
+    bonus: "400% UP TO €15,000 + 400 FREE SPINS",
+    url: "https://lolajack.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=lolajack",
+    votes: 5872,
+    isMobile: true
+  },
+
   //
   //
   // {
