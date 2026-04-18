@@ -27,18 +27,18 @@ export default function MobileCasinoModal({ mobileCasinos, isOnline, gclidValue 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#07080f]/95 backdrop-blur-sm overflow-y-auto">
-      <div className="w-full min-h-screen bg-[#07080f] felt-texture">
+    <div className="fixed inset-0 z-50 bg-[#030b1a]/95 backdrop-blur-sm overflow-y-auto">
+      <div className="w-full min-h-screen bg-[#030b1a] felt-texture">
         <Header />
 
         {/* Hero Section */}
-        <div className="bg-[#0a0c18] border-b border-amber-500/10 px-4 sm:px-6 py-3 sm:py-4 backdrop-blur">
+        <div className="bg-[#060f24] border-b border-blue-500/10 px-4 sm:px-6 py-3 sm:py-4 backdrop-blur">
           <div className="container mx-auto">
             <h1 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-white mb-1">
-              {isOnline ? 'Best Casino Sites 2026' : 'New Casino Sites 2026'}
+              {isOnline ? 'Top UK Casino Sites 2026' : 'New Casino Sites 2026'}
             </h1>
             <h2 className="text-left sm:text-xl font-extrabold gold-text mb-1">
-              {isOnline ? 'Discover new casino sites offering instant withdrawals and generous sign-up rewards.' : 'Browse the top-rated casinos across the UK'}
+              {isOnline ? 'Exclusive welcome offers with same-day withdrawals at the UK\'s highest-rated platforms.' : 'Browse the top-rated casinos across the UK'}
             </h2>
           </div>
         </div>
@@ -57,9 +57,9 @@ export default function MobileCasinoModal({ mobileCasinos, isOnline, gclidValue 
             ))}
           </div>
 
-          <div className="mt-6 sm:mt-8 bg-amber-500/5 border border-amber-500/15 rounded-2xl p-3 sm:p-4 max-w-6xl mx-auto">
-            <p className="text-amber-200/50 text-xs sm:text-sm text-center">
-              <strong className="text-amber-200/70">New customers only.</strong> 18+. T&Cs apply. BeGambleAware.org. Please play responsibly.
+          <div className="mt-6 sm:mt-8 bg-blue-500/5 border border-blue-500/15 rounded-2xl p-3 sm:p-4 max-w-6xl mx-auto">
+            <p className="text-blue-200/50 text-xs sm:text-sm text-center">
+              <strong className="text-blue-200/70">New customers only.</strong> 18+. T&Cs apply. BeGambleAware.org. Please play responsibly.
             </p>
           </div>
         </div>
