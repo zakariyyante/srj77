@@ -548,11 +548,18 @@ const casinosRawData: CasinoRawData[] = [
   //   url: "https://www.karamba.co.uk/lp/wo-300-spins?asys=cexp&affid=40838&AffiliateID=cx-40838_717172&cxd=cx-40838_717172&afi=28080&ar=&gclid=&lpr=%5Bafp2%5D&mmi=%5Bafp5%5D&MSCLKID=%5BMSCLKID%5D&utm_content=40838"
   // },
   {
-    name: "Barz",
-    logo: "/barz.webp",
-    bonus: "100% WELCOME BONUS UP TO £300 + 50 BONUS SPINS",
-    url: "https://media1.casimbaaff.com/redirect.aspx?pid=48000&bid=1480",
-    votes: 1438,
+    name: "BlueFox Casino",
+    logo: "/BlueFox_Casino.max-600x340.webp",
+    bonus: "WELCOME PACKAGE UP TO £1000 + 100 FREE SPINS",
+    url: "https://track-otn.com/trk.php?t=1643&c=2712&s1=BlueFox-{AccountCode}&clickid=",
+    votes: 4821,
+  },
+  {
+    name: "MogoBet",
+    logo: "/mogobet.webp",
+    bonus: "100% UP TO £200 + 20 FREE SPINS",
+    url: "https://track-otn.com/trk.php?t=1641&c=2713&s1=MogoBet-{AccountCode}&clickid=",
+    votes: 3654,
   },
   // {
   //   name: "Spinland",

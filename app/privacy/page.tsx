@@ -2,8 +2,9 @@ import Header from '../components/Header';
 import Logo from '../components/Logo';
 
 export const metadata = {
-  title: "Privacy Policy - Casino Top Choices",
-  description: "Privacy Policy for Casino Top Choices. Learn how we collect, use, and protect your personal information.",
+  title: "Privacy Policy - SweetSlots UK",
+  description:
+    "Privacy Policy for SweetSlots UK. Learn how we collect, use, and protect information when you use our website.",
 };
 
 export default function PrivacyPolicy() {
@@ -25,9 +26,9 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">1. Introduction</h2>
               <p>
-                Welcome to Casino Top Choices ("we," "our," or "us"). We operate the website uk10topslot.com
-                (the "Service"). This Privacy Policy explains how we collect, use, disclose, and safeguard 
-                your information when you visit our website.
+                Welcome to SweetSlots UK ("we," "our," or "us"). We operate the website sweetslotsuk.com (the
+                "Service"). This Privacy Policy explains how we collect, use, disclose, and safeguard
+                information when you visit our website.
               </p>
               <p>
                 By using our Service, you agree to the collection and use of information in accordance with 
@@ -188,8 +189,16 @@ export default function PrivacyPolicy() {
                 contact us:
               </p>
               <div className="mt-3 bg-white/5 rounded-2xl p-4 border border-white/10">
-                <p className="font-semibold text-white">Casino Top Choices</p>
-                <p>Website: <a href="https://www.uk10topslot.com" className="text-emerald-400 hover:text-emerald-300 underline">uk10topslot.com</a></p>
+                <p className="font-semibold text-white">SweetSlots UK</p>
+                <p>
+                  Website:{" "}
+                  <a
+                    href="https://www.sweetslotsuk.com"
+                    className="text-emerald-400 hover:text-emerald-300 underline"
+                  >
+                    sweetslotsuk.com
+                  </a>
+                </p>
                 <p>Email: Please use our contact form on the website</p>
               </div>
             </section>
@@ -204,7 +213,7 @@ export default function PrivacyPolicy() {
           </div>
           <div className="border-t border-white/10 pt-4 sm:pt-6 text-center">
             <p className="text-gray-500 text-xs sm:text-sm">
-              © 2026 uk10topslot.com. For educational purposes only. 18+ only. Please gamble responsibly.
+              © 2026 sweetslotsuk.com. For informational purposes only. 18+ only. Please gamble responsibly.
             </p>
             <div className="mt-4 flex justify-center gap-4 text-xs sm:text-sm">
               <a href="/" className="text-emerald-400 hover:text-emerald-300">Home</a>

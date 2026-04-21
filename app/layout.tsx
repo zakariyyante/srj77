@@ -3,8 +3,21 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Top Casinos - Best Online Casino Sites UK 2026",
-  description: "Discover the UK's finest online casinos. Expert-rated, UKGC licensed platforms with exclusive bonuses, fast withdrawals, and premium gaming.",
+  metadataBase: new URL("https://sweetslotsuk.com"),
+  title: "SweetSlots UK - Top Online Casino Picks (2026)",
+  description:
+    "SweetSlots UK compares UKGC-licensed casino sites with standout bonuses, speedy withdrawals, and great game libraries—updated regularly.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://sweetslotsuk.com/",
+    siteName: "SweetSlots UK",
+    title: "SweetSlots UK - Top Online Casino Picks (2026)",
+    description:
+      "Independent UK casino comparisons with a focus on licensing, bonuses, payouts, and player experience—updated regularly.",
+  },
 };
 
 export default function RootLayout({
