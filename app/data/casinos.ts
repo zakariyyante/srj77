@@ -41,22 +41,22 @@ const casinosRawData: CasinoRawData[] = [
   //   isMobile: true
   // },
   //
-  {
-    name: "Westace",
-    logo: "/westace.webp",
-    bonus: "300% UP TO €2000 + 150 FS",
-    url: "https://westace.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=westace",
-    votes: 5872,
-    isMobile: true
-  },
-  {
-    name: "Lolajack",
-    logo: "/lolajack.webp",
-    bonus: "400% UP TO €15,000 + 400 FREE SPINS",
-    url: "https://lolajack.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=lolajack",
-    votes: 5872,
-    isMobile: true
-  },
+  // {
+  //   name: "Westace",
+  //   logo: "/westace.webp",
+  //   bonus: "300% UP TO €2000 + 150 FS",
+  //   url: "https://westace.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=westace",
+  //   votes: 5872,
+  //   isMobile: true
+  // },
+  // {
+  //   name: "Lolajack",
+  //   logo: "/lolajack.webp",
+  //   bonus: "400% UP TO €15,000 + 400 FREE SPINS",
+  //   url: "https://lolajack.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=lolajack",
+  //   votes: 5872,
+  //   isMobile: true
+  // },
   //
   // //
   // //
@@ -69,14 +69,14 @@ const casinosRawData: CasinoRawData[] = [
   //   isMobile: true
   // },
 
-  {
-    name: "X3Bet",
-    logo: "/x3bet.svg",
-    bonus: "100% UP TO €600 + 200 FREE SPINS",
-    url: "https://x3bet.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=x3bet",
-    votes: 5872,
-    isMobile: true
-  },
+  // {
+  //   name: "X3Bet",
+  //   logo: "/x3bet.svg",
+  //   bonus: "100% UP TO €600 + 200 FREE SPINS",
+  //   url: "https://x3bet.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=x3bet",
+  //   votes: 5872,
+  //   isMobile: true
+  // },
 
 
 
