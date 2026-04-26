@@ -143,17 +143,22 @@ export default async function Home({ searchParams }: PageProps) {
           TRUST BAR — below brands
       ══════════════════════════════════════════ */}
       <div className="border-y" style={{ borderColor: 'rgba(244,185,66,0.09)', background: 'rgba(244,185,66,0.02)' }}>
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+        <div className="overflow-x-auto no-scrollbar">
+          <div className="flex items-center gap-8 px-6 py-4 min-w-max mx-auto sm:justify-center sm:min-w-0">
             {[
               { num: '25+',   label: 'Casinos Reviewed' },
               { num: '100%',  label: 'UKGC Licensed' },
               { num: '2026',  label: 'Up to Date' },
               { num: '24/7',  label: 'Support Available' },
-            ].map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="text-lg sm:text-2xl font-black vd-gold-text">{s.num}</div>
-                <div className="text-white/35 text-[11px] font-semibold uppercase tracking-wide mt-0.5">{s.label}</div>
+            ].map((s, i, arr) => (
+              <div key={s.label} className="flex items-center gap-8 flex-shrink-0">
+                <div className="text-center">
+                  <div className="text-xl sm:text-2xl font-black vd-gold-text">{s.num}</div>
+                  <div className="text-white/35 text-[11px] font-semibold uppercase tracking-wide mt-0.5">{s.label}</div>
+                </div>
+                {i < arr.length - 1 && (
+                  <div className="w-px h-8 flex-shrink-0" style={{ background: 'rgba(244,185,66,0.15)' }} />
+                )}
               </div>
             ))}
           </div>
