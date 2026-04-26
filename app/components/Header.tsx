@@ -17,21 +17,21 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full">
-      {/* Gold announcement bar — hidden on mobile so it doesn't crowd the modal */}
-      <div className="hidden sm:block border-b border-amber-400/[0.12] bg-[#06090f]">
-        <p className="text-center py-1.5 text-[11px] tracking-wide text-amber-400/55">
-          <span className="text-emerald-400/70">✓</span>&nbsp; UKGC-licensed casinos only
+      {/* Announcement bar — hidden on mobile */}
+      <div className="hidden sm:block border-b border-amber-400/[0.10] bg-[#06090f]">
+        <p className="text-center py-1 text-[10px] tracking-wide text-amber-400/45">
+          <span className="text-emerald-400/60">✓</span>&nbsp; UKGC-licensed only
           &nbsp;·&nbsp;
-          <span className="text-amber-400/70">★</span>&nbsp; 100% independent editorial
+          <span className="text-amber-400/60">★</span>&nbsp; 100% independent
           &nbsp;·&nbsp;
-          <span className="text-amber-400/70">⚡</span>&nbsp; Updated April 2026
+          <span className="text-amber-400/60">⚡</span>&nbsp; Updated April 2026
         </p>
       </div>
 
       {/* Main bar */}
       <div className="bg-[#04060c]/96 backdrop-blur-xl border-b border-white/[0.07]">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between py-3">
+          <div className="flex items-center justify-between py-2">
 
             <a href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
               <Logo />
@@ -43,7 +43,7 @@ export default function Header() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="relative text-white/50 hover:text-white transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-white/[0.04] tracking-wide group"
+                  className="relative text-white/45 hover:text-white transition-colors text-xs font-medium px-3 py-1.5 rounded-lg hover:bg-white/[0.04] tracking-wide group"
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-4 h-px bg-amber-400/60 transition-all duration-300 rounded-full" />
@@ -54,7 +54,7 @@ export default function Header() {
             {/* Gold CTA */}
             <a
               href="/#casinos"
-              className="hidden lg:inline-flex items-center justify-center gap-2 vd-btn-gold vd-btn-shine rounded-xl px-5 py-2.5 text-sm font-black tracking-wide shadow-lg shadow-amber-500/20"
+              className="hidden lg:inline-flex items-center justify-center gap-1.5 vd-btn-gold vd-btn-shine rounded-lg px-4 py-2 text-xs font-black tracking-wide shadow-lg shadow-amber-500/20"
             >
               Top Picks &rarr;
             </a>
@@ -62,10 +62,10 @@ export default function Header() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden text-white/60 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/[0.06]"
+              className="lg:hidden text-white/60 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/[0.06]"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
         </div>

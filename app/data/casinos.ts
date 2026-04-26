@@ -32,19 +32,25 @@ const topBadges = ["Best Bonus", "Top Pick", "Trending Now"];
 
 // Raw casino data without id, rating, and badgessss
 const casinosRawData: CasinoRawData[] = [
-  
+  {
+    name: "Midnite",
+    logo: "/midnite.png",
+    bonus: "BET £20 GET 100 FREE SPINS",
+    url: "https://track-otn.com/trk.php?t=1659&c=2729",
+    votes: 4821,
+  },
   {
     name: "BlueFox Casino",
     logo: "/BlueFox_Casino.max-600x340.webp",
     bonus: "WELCOME PACKAGE UP TO £1000 + 100 FREE SPINS",
-    url: "https://track-otn.com/trk.php?t=1643&c=2712&s1=BlueFox-{AccountCode}&clickid=",
+    url: "https://track-otn.com/trk.php?t=1643&c=2712",
     votes: 4821,
   },
   {
     name: "MogoBet",
     logo: "/mogobet.webp",
     bonus: "100% UP TO £200 + 20 FREE SPINS",
-    url: "https://track-otn.com/trk.php?t=1641&c=2713&s1=MogoBet-{AccountCode}&clickid=",
+    url: "https://track-otn.com/trk.php?t=1641&c=2713",
     votes: 3654,
   }
 ];
