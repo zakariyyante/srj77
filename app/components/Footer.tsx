@@ -167,13 +167,13 @@ export default function Footer() {
         {/* Disclaimer + copyright */}
         <div className="text-center space-y-2">
           <p className="text-white/25 text-xs leading-relaxed max-w-2xl mx-auto">
-            SweetSlots UK is an independent editorial comparison service. We may earn a commission
+            UK Casino Win is an independent editorial comparison service. We may earn a commission
             when you register via our links—this does not influence our rankings or reviews. Always
             verify UKGC licensing before depositing. Gambling can be addictive; only stake what
             you can afford to lose.
           </p>
           <p className="text-white/15 text-xs">
-            &copy; 2026 sweetslotsuk.com &nbsp;&middot;&nbsp; 18+ only &nbsp;&middot;&nbsp; For informational purposes only
+            &copy; 2026 ukcasinowin.com &nbsp;&middot;&nbsp; 18+ only &nbsp;&middot;&nbsp; For informational purposes only
           </p>
         </div>
       </div>

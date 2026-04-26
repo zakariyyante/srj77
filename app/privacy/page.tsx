@@ -2,9 +2,9 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'Privacy Policy – SweetSlots UK',
+  title: 'Privacy Policy – UK Casino Win',
   description:
-    'Privacy Policy for SweetSlots UK. Learn how we collect, use, and protect information when you use our website.',
+    'Privacy Policy for UK Casino Win. Learn how we collect, use, and protect information when you use our website.',
 };
 
 export default function PrivacyPolicy() {
@@ -34,8 +34,8 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-lg sm:text-xl font-bold text-white/90 mb-3">1. Introduction</h2>
               <p>
-                Welcome to SweetSlots UK (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;).
-                We operate the website sweetslotsuk.com (the &ldquo;Service&rdquo;). This Privacy
+                Welcome to UK Casino Win (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;).
+                We operate the website ukcasinowin.com (the &ldquo;Service&rdquo;). This Privacy
                 Policy explains how we collect, use, disclose, and safeguard information when you
                 visit our website.
               </p>
@@ -201,14 +201,14 @@ export default function PrivacyPolicy() {
                 please contact us:
               </p>
               <div className="mt-3 bg-white/[0.04] rounded-2xl p-4 border border-white/[0.08]">
-                <p className="font-semibold text-white/80">SweetSlots UK</p>
+                <p className="font-semibold text-white/80">UK Casino Win</p>
                 <p>
                   Website:{' '}
                   <a
-                    href="https://www.sweetslotsuk.com"
+                    href="https://www.ukcasinowin.com"
                     className="text-cyan-400 hover:text-cyan-300 underline"
                   >
-                    sweetslotsuk.com
+                    ukcasinowin.com
                   </a>
                 </p>
                 <p>Email: Please use our contact form on the website</p>

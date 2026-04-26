@@ -2,9 +2,9 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'Terms of Service – SweetSlots UK',
+  title: 'Terms of Service – UK Casino Win',
   description:
-    'Terms of Service for SweetSlots UK. Read the terms and conditions for using our casino comparison website.',
+    'Terms of Service for UK Casino Win. Read the terms and conditions for using our casino comparison website.',
 };
 
 export default function TermsOfService() {
@@ -34,7 +34,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-lg sm:text-xl font-bold text-white/90 mb-3">1. Acceptance of Terms</h2>
               <p>
-                By accessing and using sweetslotsuk.com (the &ldquo;Website&rdquo; or &ldquo;Service&rdquo;),
+                By accessing and using ukcasinowin.com (the &ldquo;Website&rdquo; or &ldquo;Service&rdquo;),
                 you accept and agree to be bound by these Terms. If you do not agree, please do not
                 use this Service.
               </p>
@@ -43,7 +43,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-lg sm:text-xl font-bold text-white/90 mb-3">2. Description of Service</h2>
               <p>
-                SweetSlots UK is an information and comparison website that provides reviews,
+                UK Casino Win is an information and comparison website that provides reviews,
                 ratings, and information about online casino operators. We are an independent
                 comparison service and do not operate any gambling services ourselves.
               </p>
@@ -130,7 +130,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-lg sm:text-xl font-bold text-white/90 mb-3">7. Limitation of Liability</h2>
               <p>
-                To the maximum extent permitted by applicable law, SweetSlots UK and its owners,
+                To the maximum extent permitted by applicable law, UK Casino Win and its owners,
                 employees, and affiliates shall not be liable for any indirect, incidental, special,
                 consequential, or punitive damages, including without limitation, loss of profits,
                 data, use, goodwill, or other intangible losses, resulting from:
@@ -191,7 +191,7 @@ export default function TermsOfService() {
               <h2 className="text-lg sm:text-xl font-bold text-white/90 mb-3">9. Intellectual Property</h2>
               <p>
                 The Service and its original content, features, and functionality are owned by
-                SweetSlots UK and are protected by international copyright, trademark, patent,
+                UK Casino Win and are protected by international copyright, trademark, patent,
                 trade secret, and other intellectual property laws.
               </p>
               <p className="mt-3">
@@ -204,7 +204,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-lg sm:text-xl font-bold text-white/90 mb-3">10. Affiliate Disclosure</h2>
               <p>
-                SweetSlots UK may receive compensation from casino operators when users click on
+                UK Casino Win may receive compensation from casino operators when users click on
                 links or sign up through our Service. This compensation helps us maintain and
                 improve our Service.
               </p>
@@ -247,14 +247,14 @@ export default function TermsOfService() {
                 If you have any questions about these Terms of Service, please contact us:
               </p>
               <div className="mt-3 bg-white/[0.04] rounded-2xl p-4 border border-white/[0.08]">
-                <p className="font-semibold text-white/80">SweetSlots UK</p>
+                <p className="font-semibold text-white/80">UK Casino Win</p>
                 <p>
                   Website:{' '}
                   <a
-                    href="https://www.sweetslotsuk.com"
+                    href="https://www.ukcasinowin.com"
                     className="text-cyan-400 hover:text-cyan-300 underline"
                   >
-                    sweetslotsuk.com
+                    ukcasinowin.com
                   </a>
                 </p>
                 <p>Email: Please use our contact form on the website</p>

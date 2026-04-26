@@ -27,19 +27,22 @@ export default async function Home({ searchParams }: PageProps) {
           HERO
       ══════════════════════════════════════════ */}
       <section className="relative overflow-hidden">
-        {/* Ambient glow layers */}
+        {/* Hero background image with dark overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url(/casino-hero-bg.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 30%',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+        {/* Multi-layer dark overlay to keep text readable */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(6,9,15,0.82) 0%, rgba(6,9,15,0.70) 50%, rgba(6,9,15,0.95) 100%)' }} />
+        {/* Subtle gold vignette */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full opacity-[0.07]"
+          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full opacity-[0.12]"
             style={{ background: 'radial-gradient(ellipse, #f4b942 0%, transparent 70%)' }} />
-          <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full opacity-[0.04]"
-            style={{ background: 'radial-gradient(ellipse, #5b9cf6 0%, transparent 70%)' }} />
-          {/* Diagonal gold accent strip */}
-          <div
-            className="absolute top-0 right-0 w-1/2 h-full opacity-[0.03]"
-            style={{
-              background: 'linear-gradient(135deg, transparent 40%, rgba(244,185,66,1) 100%)',
-            }}
-          />
         </div>
 
         <div className="relative container mx-auto px-4 pt-14 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20 text-center">
@@ -48,18 +51,18 @@ export default async function Home({ searchParams }: PageProps) {
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 mb-6 vd-eyebrow">
               <span className="w-1.5 h-1.5 rounded-full pulse-gold" style={{ background: '#f4b942' }} />
-              SweetSlots UK &middot; Updated April 2026
+              UKCasinoWin &middot; Updated April 2026
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-[4.25rem] font-black text-white mb-5 leading-[1.05] tracking-tight">
-              UK&apos;s Most Trusted<br className="hidden sm:block" />{' '}
-              <span className="vd-gold-text">Casino Comparison</span>
+              Win Big at the UK&apos;s<br className="hidden sm:block" />{' '}
+              <span className="vd-gold-text">Best Casino Sites</span>
             </h1>
 
-            <p className="text-base sm:text-xl text-white/50 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
-              Independent picks covering UKGC licensing, welcome bonuses, withdrawal speed,
-              and real player feedback.
+            <p className="text-base sm:text-xl text-white/60 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
+              Independent picks covering UKGC licensing, exclusive welcome bonuses,
+              fast withdrawals, and real player feedback — so you play and win with confidence.
             </p>
 
             {/* Stat chips */}
@@ -167,7 +170,7 @@ export default async function Home({ searchParams }: PageProps) {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-2">
-              Why trust SweetSlots UK?
+              Why trust UK Casino Win?
             </h2>
             <p className="text-white/35 text-sm sm:text-base">
               Our editorial process is built for UK players, not operators.

@@ -3,8 +3,8 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sweetslotsuk.com"),
-  title: "SweetSlots UK – Best Casino Sites UK 2026 | UKGC Licensed",
+  metadataBase: new URL("https://ukcasinowin.com"),
+  title: "UK Casino Win – Best Casino Sites UK 2026 | UKGC Licensed",
   description:
     "Find the UK's top-rated UKGC-licensed casino sites for 2026. Independent reviews ranked by bonus value, withdrawal speed, and real player feedback—updated monthly.",
   alternates: {
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   },
   keywords: [
     "best UK casino sites 2026",
+    "UK casino win",
     "UKGC licensed casinos",
     "online casino UK",
     "casino bonus UK",
@@ -19,15 +20,15 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    url: "https://sweetslotsuk.com/",
-    siteName: "SweetSlots UK",
-    title: "SweetSlots UK – Best Casino Sites UK 2026 | UKGC Licensed",
+    url: "https://ukcasinowin.com/",
+    siteName: "UK Casino Win",
+    title: "UK Casino Win – Best Casino Sites UK 2026 | UKGC Licensed",
     description:
       "Independent UK casino comparisons ranked by licensing, bonuses, payout speed, and player experience—updated monthly.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SweetSlots UK – Best Casino Sites UK 2026",
+    title: "UK Casino Win – Best Casino Sites UK 2026",
     description:
       "Independent UKGC-licensed casino comparisons for UK players. Ranked by bonus value, withdrawal speed, and real feedback.",
   },
