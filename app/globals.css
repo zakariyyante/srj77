@@ -1,14 +1,30 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════════
+   PROTECTED: CSS variables used by MobileCasinoModal
+   and CasinoCard — do NOT remove or rename these.
+   ═══════════════════════════════════════════════════════ */
 :root {
   --background: #030b1a;
   --foreground: #e0f2fe;
-  --primary: #fb7185; /* rose */
-  --primary-2: #a855f7; /* purple */
-  --accent: #22d3ee; /* cyan */
-  --muted: rgba(226, 232, 240, 0.55);
-  --card-bg: #091428;
+  --primary:   #fb7185;   /* rose  */
+  --primary-2: #a855f7;   /* purple */
+  --accent:    #22d3ee;   /* cyan  */
+  --muted:     rgba(226, 232, 240, 0.55);
+  --card-bg:   #091428;
   --card-border: rgba(251, 113, 133, 0.22);
+
+  /* ── Vault Dark design system (desktop only) ─────── */
+  --vd-bg:          #06090f;
+  --vd-surface:     #0c1223;
+  --vd-surface-2:   #121d35;
+  --vd-gold:        #f4b942;
+  --vd-gold-2:      #d4920d;
+  --vd-gold-light:  #fcd34d;
+  --vd-blue:        #5b9cf6;
+  --vd-green:       #2dd4a0;
+  --vd-border-gold: rgba(244, 185, 66, 0.16);
+  --vd-border:      rgba(255, 255, 255, 0.07);
 }
 
 @theme inline {
@@ -27,29 +43,29 @@ body {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* ═══════════════════════════════════════════════════════
+   PROTECTED: Keyframes & utilities for MobileCasinoModal
+   / CasinoCard — must remain unchanged.
+   ═══════════════════════════════════════════════════════ */
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
 }
-
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
+  50%       { transform: translateY(-6px); }
 }
-
 @keyframes cardFlip {
   0%, 100% { transform: rotateY(0deg); }
-  50% { transform: rotateY(180deg); }
+  50%       { transform: rotateY(180deg); }
 }
-
 @keyframes glow {
   0%, 100% { box-shadow: 0 0 20px rgba(251, 113, 133, 0.10); }
-  50% { box-shadow: 0 0 42px rgba(168, 85, 247, 0.25); }
+  50%       { box-shadow: 0 0 42px rgba(168, 85, 247, 0.25); }
 }
-
 @keyframes sparkle {
   0%, 100% { opacity: 0; transform: scale(0); }
-  50% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 1; transform: scale(1); }
 }
 
 .gold-shimmer {
@@ -57,14 +73,8 @@ body {
   background-size: 200% 100%;
   animation: shimmer 3s linear infinite;
 }
-
-.casino-glow {
-  animation: glow 3s ease-in-out infinite;
-}
-
-.float-animation {
-  animation: float 4s ease-in-out infinite;
-}
+.casino-glow     { animation: glow 3s ease-in-out infinite; }
+.float-animation { animation: float 4s ease-in-out infinite; }
 
 .gold-text {
   background: linear-gradient(135deg, var(--primary), var(--primary-2), var(--accent));
@@ -72,18 +82,168 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
 .gold-border {
   border-image: linear-gradient(135deg, var(--primary), var(--accent), var(--primary-2)) 1;
 }
-
 .casino-card-bg {
   background: linear-gradient(165deg, #091428 0%, #0d1e3a 50%, #091428 100%);
 }
-
 .felt-texture {
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(34, 211, 238, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 50%, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 10%, rgba(251, 113, 133, 0.05) 0%, transparent 55%);
+    radial-gradient(ellipse at 20% 50%, rgba(34,211,238,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(168,85,247,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 10%, rgba(251,113,133,0.05) 0%, transparent 55%);
 }
+
+/* ═══════════════════════════════════════════════════════
+   Vault Dark — new design utilities (desktop only)
+   ═══════════════════════════════════════════════════════ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-gold {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(244,185,66,0); }
+  50%       { opacity: 0.85; box-shadow: 0 0 12px 2px rgba(244,185,66,0.2); }
+}
+@keyframes shimmer-gold {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.fade-in-up  { animation: fadeInUp 0.55s ease-out forwards; }
+.pulse-gold  { animation: pulse-gold 2.4s ease-in-out infinite; }
+
+/* Vault Dark card */
+.vd-card {
+  background: linear-gradient(150deg, var(--vd-surface) 0%, var(--vd-surface-2) 55%, var(--vd-surface) 100%);
+  border: 1px solid var(--vd-border-gold);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.vd-card:hover {
+  border-color: rgba(244,185,66,0.38);
+  box-shadow: 0 8px 40px rgba(244,185,66,0.10);
+}
+
+/* Vault Dark gold text */
+.vd-gold-text {
+  background: linear-gradient(135deg, #fcd34d 0%, #f4b942 45%, #d4920d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Vault Dark gold CTA button */
+.vd-btn-gold {
+  background: linear-gradient(135deg, #f4b942 0%, #e8890a 100%);
+  color: #0c0800;
+  transition: filter 0.2s, transform 0.15s;
+}
+.vd-btn-gold:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+.vd-btn-gold:active { transform: translateY(0); }
+
+/* Gold shimmer sweep for CTA */
+.vd-btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.vd-btn-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.22) 50%, transparent 65%);
+  background-size: 200% 100%;
+  animation: shimmer-gold 2.8s linear infinite;
+}
+
+/* Vault page background */
+.vd-bg {
+  background-color: var(--vd-bg);
+  background-image:
+    radial-gradient(ellipse at 15% 30%, rgba(244,185,66,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 70%, rgba(91,156,246,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 0%,  rgba(244,185,66,0.03) 0%, transparent 50%);
+}
+
+/* Horizontal rule with gold fade */
+.vd-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(244,185,66,0.28), rgba(91,156,246,0.18), transparent);
+}
+
+/* Section eyebrow badge */
+.vd-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.875rem;
+  border-radius: 9999px;
+  background: rgba(244,185,66,0.08);
+  border: 1px solid rgba(244,185,66,0.22);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f4b942;
+}
+
+/* Trust pill */
+.vd-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(45,212,160,0.08);
+  border: 1px solid rgba(45,212,160,0.22);
+  color: #2dd4a0;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+/* Feature card */
+.vd-feature-card {
+  background: linear-gradient(150deg, var(--vd-surface) 0%, var(--vd-surface-2) 100%);
+  border: 1px solid rgba(244,185,66,0.10);
+  border-radius: 1.25rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.vd-feature-card:hover {
+  border-color: rgba(244,185,66,0.28);
+  box-shadow: 0 4px 24px rgba(244,185,66,0.07);
+}
+
+/* FAQ */
+.faq-chevron {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+details[open] .faq-chevron { transform: rotate(45deg); }
+details summary              { cursor: pointer; list-style: none; }
+details summary::-webkit-details-marker { display: none; }
+
+/* Section rule (used in Footer) */
+.section-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(244,185,66,0.22), rgba(91,156,246,0.15), transparent);
+}
+
+/* Responsible gambling link hover */
+.vd-rg-link {
+  transition: border-color 0.2s;
+  border: 1px solid rgba(45,212,160,0.10);
+}
+.vd-rg-link:hover {
+  border-color: rgba(45,212,160,0.30);
+}
+
+/* pulse-subtle kept for eyebrow badge */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+.pulse-subtle { animation: pulse-subtle 2.4s ease-in-out infinite; }

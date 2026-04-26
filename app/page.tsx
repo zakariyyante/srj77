@@ -1,11 +1,8 @@
-import Image from 'next/image';
-import CasinoCard from './components/CasinoCard';
 import Header from './components/Header';
-import Logo from './components/Logo';
+import Footer from './components/Footer';
 import MobileCasinoModal from './components/MobileCasinoModal';
-import ExclusiveOfferPopup from './components/ExclusiveOfferPopup';
+import DesktopCasinoCard from './components/DesktopCasinoCard';
 import { casinos } from './data/casinos';
-import { headers } from 'next/headers';
 
 type PageProps = {
   searchParams?: Record<string, string | string[] | undefined>;
@@ -13,76 +10,126 @@ type PageProps = {
 
 export default async function Home({ searchParams }: PageProps) {
   const resolvedSearchParams = await searchParams;
-  const gclid = resolvedSearchParams?.gclid as string | undefined;
-  const hasGclid = !!gclid;
+  const gclid    = resolvedSearchParams?.gclid as string | undefined;
+  const isOnline = !!gclid;
 
-  const isOnline= hasGclid;
+  const mobileCasinos  = casinos.filter((c) => c.isMobile === true);
+  const regularCasinos = casinos.filter((c) => !c.isMobile);
 
-  const mobileCasinos = casinos.filter(casino => casino.isMobile === true);
-  const regularCasinos = casinos.filter(casino => !casino.isMobile);
-  const exclusiveCasino = casinos.find(casino => casino.name === 'Basswin') || mobileCasinos[0];
-  
   return (
-    <div className="min-h-screen bg-[#030b1a] felt-texture">
+    <div className="min-h-screen vd-bg">
+      {/* ── Protected mobile modal — untouched ── */}
       <MobileCasinoModal mobileCasinos={mobileCasinos} isOnline={isOnline} gclidValue={gclid} />
-      
-      {/*<ExclusiveOfferPopup casino={exclusiveCasino} isOnline={isOnline} gclidValue={gclid} countryCode={countryCode} />*/}
-      
+
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative container mx-auto px-4 pt-6 pb-5 sm:pt-14 sm:pb-8 lg:pt-16 lg:pb-10 text-center overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 left-10 text-6xl sm:text-8xl opacity-[0.045] text-rose-300 rotate-12 select-none">♠</div>
-          <div className="absolute top-20 right-16 text-5xl sm:text-7xl opacity-[0.045] text-cyan-300 -rotate-12 select-none">♥</div>
-          <div className="absolute bottom-10 left-1/4 text-5xl sm:text-7xl opacity-[0.045] text-fuchsia-300 rotate-6 select-none">♦</div>
-          <div className="absolute bottom-5 right-1/4 text-6xl sm:text-8xl opacity-[0.045] text-cyan-300 -rotate-6 select-none">♣</div>
+      {/* ══════════════════════════════════════════
+          HERO
+      ══════════════════════════════════════════ */}
+      <section className="relative overflow-hidden">
+        {/* Ambient glow layers */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full opacity-[0.07]"
+            style={{ background: 'radial-gradient(ellipse, #f4b942 0%, transparent 70%)' }} />
+          <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full opacity-[0.04]"
+            style={{ background: 'radial-gradient(ellipse, #5b9cf6 0%, transparent 70%)' }} />
+          {/* Diagonal gold accent strip */}
+          <div
+            className="absolute top-0 right-0 w-1/2 h-full opacity-[0.03]"
+            style={{
+              background: 'linear-gradient(135deg, transparent 40%, rgba(244,185,66,1) 100%)',
+            }}
+          />
         </div>
 
-        <div className="relative mx-auto max-w-4xl">
-          <div className="inline-block mb-4 sm:mb-5 px-5 py-2 rounded-full bg-gradient-to-r from-rose-500/10 via-fuchsia-500/10 to-cyan-500/10 border border-white/10">
-            <span className="text-xs sm:text-sm font-bold text-cyan-200 uppercase tracking-wider">
-              SweetSlots UK • Updated for 2026
-            </span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-5 leading-tight">
-            Find the UK&apos;s <span className="gold-text">best-value</span> casino sites
-          </h1>
-          <p className="text-base sm:text-lg text-white/65 mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Independent picks focused on UKGC licensing, strong welcome offers, quick withdrawals, and a great game mix.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4">
-            <div className="flex items-center gap-2.5 bg-white/5 rounded-full px-4 sm:px-5 py-2.5 border border-white/10">
-              <span className="text-cyan-300 text-lg">♠</span>
-              <span className="text-white/75 text-sm font-semibold">UKGC licensed</span>
+        <div className="relative container mx-auto px-4 pt-14 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20 text-center">
+          <div className="mx-auto max-w-4xl">
+
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 mb-6 vd-eyebrow">
+              <span className="w-1.5 h-1.5 rounded-full pulse-gold" style={{ background: '#f4b942' }} />
+              SweetSlots UK &middot; Updated April 2026
             </div>
-            <div className="flex items-center gap-2.5 bg-white/5 rounded-full px-4 sm:px-5 py-2.5 border border-white/10">
-              <span className="text-rose-300 text-lg">★</span>
-              <span className="text-white/75 text-sm font-semibold">Editor picks</span>
+
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[4.25rem] font-black text-white mb-5 leading-[1.05] tracking-tight">
+              UK&apos;s Most Trusted<br className="hidden sm:block" />{' '}
+              <span className="vd-gold-text">Casino Comparison</span>
+            </h1>
+
+            <p className="text-base sm:text-xl text-white/50 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
+              Independent picks covering UKGC licensing, welcome bonuses, withdrawal speed,
+              and real player feedback.
+            </p>
+
+            {/* Stat chips */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+              {[
+                { icon: '🛡', label: 'UKGC Licensed Only' },
+                { icon: '★', label: 'Editorial Picks' },
+                { icon: '⚡', label: 'Fast Payout Focus' },
+                { icon: '✓', label: '100% Independent' },
+              ].map((s) => (
+                <div
+                  key={s.label}
+                  className="flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-semibold text-white/60"
+                  style={{ background: 'rgba(244,185,66,0.05)', border: '1px solid rgba(244,185,66,0.14)' }}
+                >
+                  <span>{s.icon}</span>
+                  {s.label}
+                </div>
+              ))}
             </div>
-            <div className="flex items-center gap-2.5 bg-white/5 rounded-full px-4 sm:px-5 py-2.5 border border-white/10">
-              <span className="text-fuchsia-300 text-lg">♦</span>
-              <span className="text-white/75 text-sm font-semibold">Fast payouts</span>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href="#casinos"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 vd-btn-gold vd-btn-shine rounded-xl px-8 py-4 text-sm font-black tracking-widest uppercase shadow-2xl"
+                style={{ boxShadow: '0 6px 28px rgba(244,185,66,0.22)' }}
+              >
+                View Top Casinos &rarr;
+              </a>
+              <a
+                href="#guide"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl px-8 py-4 text-sm font-semibold text-white/55 hover:text-white transition-colors"
+                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+              >
+                How We Rate
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Casino Cards Section */}
-      <section id="casinos" className="container mx-auto px-4 pb-16">
-        <div className="mb-3 sm:mb-5 lg:mb-8 text-center">
-          <h3 className="text-xl sm:text-2xl lg:text-4xl font-extrabold gold-text mb-2 sm:mb-4 tracking-wide">
-            Editors&apos; top selections
-          </h3>
-          <p className="text-sm sm:text-base text-white/55">
-            Refreshed regularly and ranked by payout speed, bonus value, and player feedback.
-          </p>
+      {/* ══════════════════════════════════════════
+          TRUST BAR
+      ══════════════════════════════════════════ */}
+      <div className="border-y" style={{ borderColor: 'rgba(244,185,66,0.09)', background: 'rgba(244,185,66,0.02)' }}>
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+            {[
+              { num: '25+',   label: 'Casinos Reviewed' },
+              { num: '100%',  label: 'UKGC Licensed' },
+              { num: '2026',  label: 'Up to Date' },
+              { num: '24/7',  label: 'Support Available' },
+            ].map((s) => (
+              <div key={s.label} className="text-center">
+                <div className="text-lg sm:text-2xl font-black vd-gold-text">{s.num}</div>
+                <div className="text-white/35 text-[11px] font-semibold uppercase tracking-wide mt-0.5">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+      {/* ══════════════════════════════════════════
+          CASINO CARDS
+      ══════════════════════════════════════════ */}
+      <section id="casinos" className="container mx-auto px-4 py-10 sm:py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-7xl mx-auto">
           {regularCasinos.map((casino, index) => (
-            <CasinoCard
+            <DesktopCasinoCard
               key={casino.id}
               casino={casino}
               rank={index + 1}
@@ -91,152 +138,199 @@ export default async function Home({ searchParams }: PageProps) {
           ))}
         </div>
 
-        <div className="mt-8 sm:mt-12 lg:mt-16 bg-white/5 border border-white/10 rounded-2xl p-3 sm:p-4 lg:p-6 max-w-6xl mx-auto">
-          <p className="text-white/60 text-xs sm:text-sm text-center">
-            <strong className="text-white/80">New customers only.</strong> 18+. T&Cs apply. BeGambleAware.org. Please play responsibly.
+        <div
+          className="mt-10 sm:mt-14 rounded-2xl p-4 sm:p-5 max-w-4xl mx-auto text-center"
+          style={{ background: 'rgba(244,185,66,0.04)', border: '1px solid rgba(244,185,66,0.10)' }}
+        >
+          <p className="text-white/35 text-xs sm:text-sm leading-relaxed">
+            <strong className="text-white/50">New customers only.</strong> 18+. T&amp;Cs apply.{' '}
+            <a
+              href="https://www.begambleaware.org"
+              className="underline underline-offset-2 transition-colors"
+              style={{ color: 'rgba(244,185,66,0.6)' }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              BeGambleAware.org
+            </a>. Wagering requirements apply. Please gamble responsibly.
           </p>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="bg-[#06061b] py-8 sm:py-12 lg:py-16 border-y border-white/10">
+      {/* ══════════════════════════════════════════
+          WHY TRUST US
+      ══════════════════════════════════════════ */}
+      <section
+        className="border-y py-12 sm:py-16"
+        style={{ background: '#060a14', borderColor: 'rgba(244,185,66,0.08)' }}
+      >
         <div className="container mx-auto px-4 max-w-6xl">
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white mb-4 sm:mb-6 lg:mb-8 text-center">
-            How we rank UK casinos
-          </h3>
-          
-          <div className="casino-card-bg rounded-2xl p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 border border-white/10">
-            <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white/90 mb-3 sm:mb-4">
-              What makes our reviews different?
-            </h4>
-            <p className="text-white/65 mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed">
-              Our team reviews each site with a simple goal: help UK players choose confidently. We
-              score platforms on licensing, game range, bonus terms, banking options, and support.
+          <div className="text-center mb-10">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-2">
+              Why trust SweetSlots UK?
+            </h2>
+            <p className="text-white/35 text-sm sm:text-base">
+              Our editorial process is built for UK players, not operators.
             </p>
-            <ul className="space-y-2.5 text-white/65 text-sm sm:text-base">
-              <li className="flex items-start gap-2.5">
-                <span className="text-cyan-300 mt-0.5">♠</span>
-                <span>Every listed brand is checked for UKGC licensing</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-cyan-300 mt-0.5">♦</span>
-                <span>We look at security signals and fairness standards</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-cyan-300 mt-0.5">♣</span>
-                <span>Rankings are editorial-first, not pay-to-play</span>
-              </li>
-            </ul>
           </div>
 
-          <div id="guide" className="bg-white/5 rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/10 shadow-lg">
-            <h4 className="text-lg sm:text-xl lg:text-2xl font-bold gold-text mb-3 sm:mb-4">
-              Responsible Gambling
-            </h4>
-            <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">
-              Safer gambling matters. If you or someone you know needs support, confidential help is
-              available any time:
-            </p>
-            <ul className="space-y-2 text-white/70 text-sm sm:text-base">
-              <li>• <strong className="text-blue-200/80">BeGambleAware:</strong> Visit{' '}
-                <a href="https://www.begambleaware.org" className="text-cyan-300 hover:text-cyan-200 underline decoration-cyan-300/30 underline-offset-2">
-                  begambleaware.org
-                </a>
-              </li>
-              <li>• <strong className="text-blue-200/80">GamCare:</strong> Call 0808 8020 133 or visit{' '}
-                <a href="https://www.gamcare.org.uk" className="text-cyan-300 hover:text-cyan-200 underline decoration-cyan-300/30 underline-offset-2">
-                  gamcare.org.uk
-                </a>
-              </li>
-              <li>• <strong className="text-blue-200/80">National Gambling Helpline:</strong> 0808 8020 133</li>
-            </ul>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {[
+              {
+                icon: '🛡',
+                title: 'UKGC Verified',
+                desc: 'Every listed casino holds a valid UK Gambling Commission licence. We verify before listing and re-check periodically.',
+                color: '#2dd4a0',
+              },
+              {
+                icon: '📋',
+                title: 'Editorial Independence',
+                desc: 'Our rankings are never sold. We evaluate on licensing, bonus fairness, withdrawal speed, and real player reports.',
+                color: '#f4b942',
+              },
+              {
+                icon: '⚡',
+                title: 'Payout Speed Focus',
+                desc: 'We prioritise casinos with 24–72 hr withdrawal processing and clear KYC policies—no nasty surprises.',
+                color: '#5b9cf6',
+              },
+            ].map((feat) => (
+              <div key={feat.title} className="vd-feature-card p-6">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4"
+                  style={{ background: `${feat.color}12`, border: `1px solid ${feat.color}28` }}
+                >
+                  {feat.icon}
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-white mb-2">{feat.title}</h3>
+                <p className="text-white/42 text-sm leading-relaxed">{feat.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer id="contact" className="bg-[#040314] border-t border-white/10 py-6 sm:py-8 lg:py-12">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex justify-center mb-6 sm:mb-8">
-            <Logo />
+      {/* ══════════════════════════════════════════
+          HOW WE RATE
+      ══════════════════════════════════════════ */}
+      <section id="about" className="py-12 sm:py-16">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10">
+            <h2 id="guide" className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-2">
+              How we rate UK casinos
+            </h2>
+            <p className="text-white/35 text-sm sm:text-base">A transparent, player-first scoring methodology.</p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 mb-6 sm:mb-8">
-            <div>
-              <h5 className="text-white/80 font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Quick Links</h5>
-              <ul className="space-y-1 sm:space-y-2 text-white/55 text-xs sm:text-sm">
-                <li><a href="#" className="hover:text-cyan-400 transition-colors">Home</a></li>
-                <li><a href="#casinos" className="hover:text-cyan-400 transition-colors">Casinos</a></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="text-white/80 font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Legal</h5>
-              <ul className="space-y-1 sm:space-y-2 text-white/55 text-xs sm:text-sm">
-                <li><a href="/privacy" className="hover:text-cyan-400 transition-colors">Privacy</a></li>
-                <li><a href="/terms" className="hover:text-cyan-400 transition-colors">Terms</a></li>
-                <li><a href="#about" className="hover:text-cyan-400 transition-colors">About Us</a></li>
-              </ul>
-            </div>
-            <div className="col-span-2">
-              <h5 className="text-white/80 font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Disclaimer</h5>
-              <p className="text-white/55 text-xs sm:text-sm leading-relaxed">
-                SweetSlots UK is an editorial comparison site. Always check that a brand is UKGC
-                licensed. Gambling should be fun—only spend what you can afford.
-              </p>
-            </div>
-          </div>
-          
-          <div className="mt-6 sm:mt-10">
-            <p className="text-center text-white/70 text-xs sm:text-sm uppercase tracking-[0.3em] font-extrabold">
-              Play responsibly
-            </p>
-            <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4 sm:px-6">
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-                <Image
-                  src="/18plus.png"
-                  alt="18+ only"
-                  width={44}
-                  height={44}
-                  className="h-10 w-auto sm:h-11"
-                />
-                <a href="https://www.gambleaware.org" target="_blank" rel="noopener noreferrer" aria-label="Visit GambleAware">
-                  <Image
-                    src="/gambleaware.png"
-                    alt="GambleAware"
-                    width={220}
-                    height={56}
-                    className="h-9 w-auto sm:h-10"
-                  />
-                </a>
-                <a href="https://www.gamcare.org.uk" target="_blank" rel="noopener noreferrer" aria-label="Visit GamCare">
-                  <Image
-                    src="/gamcare.png"
-                    alt="GamCare"
-                    width={200}
-                    height={56}
-                    className="h-9 w-auto sm:h-10"
-                  />
-                </a>
-                <a href="https://www.gamstop.co.uk" target="_blank" rel="noopener noreferrer" aria-label="Visit GAMSTOP">
-                  <Image
-                    src="/gamestop.png"
-                    alt="GAMSTOP"
-                    width={210}
-                    height={56}
-                    className="h-9 w-auto sm:h-10"
-                  />
-                </a>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            {[
+              { label: 'Licensing & Safety', score: '30%', desc: 'UKGC licence, SSL encryption, and independent fair-play audits (eCOGRA / iTechLabs).' },
+              { label: 'Bonus Value',         score: '25%', desc: 'Wagering requirements, max-bet rules, game contribution rates, and time limits.' },
+              { label: 'Withdrawal Speed',    score: '25%', desc: 'Average payout time, payment method range, KYC friction, and cashout limits.' },
+              { label: 'Game Library',        score: '20%', desc: 'RTP transparency, software providers, live casino quality, and mobile compatibility.' },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl p-5 sm:p-6"
+                style={{ background: '#0c1223', border: '1px solid rgba(244,185,66,0.09)' }}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-bold text-white/85 text-sm sm:text-base">{item.label}</span>
+                  <span className="text-xs font-black vd-gold-text">{item.score}</span>
+                </div>
+                <p className="text-white/40 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
               </div>
-            </div>
+            ))}
           </div>
 
-          <div className="border-t border-white/10 pt-4 sm:pt-6 text-center mt-6">
-            <p className="text-white/45 text-xs sm:text-sm">
-              &copy; 2026 sweetslotsuk.com. For informational purposes only. 18+ only. Please gamble responsibly.
+          {/* Responsible gambling */}
+          <div className="rounded-2xl p-6 sm:p-8" style={{ background: '#0c1223', border: '1px solid rgba(45,212,160,0.12)' }}>
+            <h3 className="text-lg sm:text-xl font-black mb-3" style={{ color: '#2dd4a0' }}>
+              Responsible Gambling
+            </h3>
+            <p className="text-white/50 text-sm sm:text-base leading-relaxed mb-5">
+              Safer gambling is central to everything we publish. If you or someone you know needs
+              support, confidential help is available 24/7:
             </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                { org: 'BeGambleAware',     href: 'https://www.begambleaware.org', note: 'begambleaware.org' },
+                { org: 'GamCare',           href: 'https://www.gamcare.org.uk',    note: '0808 8020 133' },
+                { org: 'National Helpline', href: 'https://www.gamcare.org.uk',    note: '0808 8020 133' },
+              ].map((item) => (
+                <a
+                  key={item.org}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="vd-rg-link flex flex-col gap-0.5 p-3 rounded-xl group"
+                  style={{ background: 'rgba(45,212,160,0.05)' }}
+                >
+                  <span className="text-white/70 font-semibold text-sm group-hover:text-white transition-colors">{item.org}</span>
+                  <span className="text-[11px]" style={{ color: '#2dd4a0aa' }}>{item.note}</span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-      </footer>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          FAQ
+      ══════════════════════════════════════════ */}
+      <section
+        className="border-t py-12 sm:py-16"
+        style={{ background: '#060a14', borderColor: 'rgba(244,185,66,0.08)' }}
+      >
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-xl sm:text-2xl font-black text-white text-center mb-8">
+            Frequently asked questions
+          </h2>
+
+          <div className="space-y-3">
+            {[
+              {
+                q: 'Are all listed casinos licensed in the UK?',
+                a: 'Yes. Every casino we feature holds a valid UK Gambling Commission (UKGC) licence. We verify this before publishing and review our list periodically.',
+              },
+              {
+                q: 'How do you decide which casinos rank highest?',
+                a: "We score on four criteria: licensing & safety (30%), bonus value (25%), withdrawal speed (25%), and game library quality (20%). No fees for ranking—it's purely editorial.",
+              },
+              {
+                q: 'Do you earn commission from casinos?',
+                a: 'We may receive affiliate fees when you sign up via our links. This funds editorial operations but does not influence rankings—our reviews are independently produced.',
+              },
+              {
+                q: 'What does "fast withdrawal" mean on this site?',
+                a: 'We consider 24–72 hours a fast withdrawal window for e-wallets and crypto. Card withdrawals may take 2–5 business days depending on your bank.',
+              },
+              {
+                q: 'Where can I get help with problem gambling?',
+                a: 'Call the National Gambling Helpline on 0808 8020 133 (free, 24/7), or visit BeGambleAware.org or GamCare.org.uk for support and self-exclusion tools.',
+              },
+            ].map((item, i) => (
+              <details
+                key={i}
+                className="rounded-xl overflow-hidden"
+                style={{ background: '#0c1223', border: '1px solid rgba(244,185,66,0.09)' }}
+              >
+                <summary className="flex items-center justify-between gap-4 px-5 py-4 text-sm sm:text-base font-semibold text-white/75 hover:text-white transition-colors">
+                  {item.q}
+                  <span className="faq-chevron text-xl flex-shrink-0 leading-none" style={{ color: '#f4b942' }}>
+                    +
+                  </span>
+                </summary>
+                <div className="px-5 pb-4 border-t" style={{ borderColor: 'rgba(244,185,66,0.07)' }}>
+                  <p className="pt-3 text-white/45 text-sm leading-relaxed">{item.a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }

@@ -1,87 +1,179 @@
+'use client';
+
 import Image from 'next/image';
 import Logo from './Logo';
 
 export default function Footer() {
-  return (
-    <footer id="contact" className="bg-[#040314] border-t border-white/10 py-6 sm:py-8 lg:py-12">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="flex justify-center mb-6 sm:mb-8">
-          <Logo />
-        </div>
+  const quickLinks = [
+    { label: 'Home',           href: '/' },
+    { label: 'Casino Reviews', href: '/#casinos' },
+    { label: 'How We Rate',    href: '/#guide' },
+    { label: 'About Us',       href: '/#about' },
+  ];
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 mb-6 sm:mb-8">
-          <div>
-            <h5 className="text-white/80 font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Quick Links</h5>
-            <ul className="space-y-1 sm:space-y-2 text-white/55 text-xs sm:text-sm">
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Home</a></li>
-              <li><a href="#casinos" className="hover:text-cyan-400 transition-colors">Casinos</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5 className="text-white/80 font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Legal</h5>
-            <ul className="space-y-1 sm:space-y-2 text-white/55 text-xs sm:text-sm">
-              <li><a href="/privacy" className="hover:text-cyan-400 transition-colors">Privacy</a></li>
-              <li><a href="/terms" className="hover:text-cyan-400 transition-colors">Terms</a></li>
-              <li><a href="#about" className="hover:text-cyan-400 transition-colors">About Us</a></li>
-            </ul>
-          </div>
-          <div className="col-span-2">
-            <h5 className="text-white/80 font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Disclaimer</h5>
-            <p className="text-white/55 text-xs sm:text-sm leading-relaxed">
-              SweetSlots UK is an editorial comparison site. Always verify UKGC licensing and play
-              responsibly—only spend what you can afford.
+  const legalLinks = [
+    { label: 'Privacy Policy',   href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Contact Us',       href: '/#contact' },
+  ];
+
+  const helpLinks = [
+    { label: 'BeGambleAware', href: 'https://www.begambleaware.org',  note: 'begambleaware.org' },
+    { label: 'GamCare',       href: 'https://www.gamcare.org.uk',     note: '0808 8020 133' },
+    { label: 'GAMSTOP',       href: 'https://www.gamstop.co.uk',      note: 'gamstop.co.uk' },
+  ];
+
+  return (
+    <footer id="contact" className="border-t" style={{ borderColor: 'rgba(244,185,66,0.10)', background: '#030508' }}>
+      <div className="container mx-auto px-4 max-w-6xl py-10 sm:py-14">
+
+        {/* Top grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-10">
+          <div className="col-span-2 sm:col-span-1">
+            <Logo />
+            <p className="mt-3 text-white/35 text-xs leading-relaxed max-w-[200px]">
+              Independent UK casino comparisons. Editorial picks only. UKGC-verified.
             </p>
           </div>
-        </div>
-        
-        <div className="mt-6 sm:mt-10">
-          <p className="text-center text-white/70 text-xs sm:text-sm uppercase tracking-[0.3em] font-extrabold">
-            Play responsibly
-          </p>
-          <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4 sm:px-6">
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-              <Image
-                src="/18plus.png"
-                alt="18+ only"
-                width={44}
-                height={44}
-                className="h-10 w-auto sm:h-11"
-                priority
-              />
-              <a href="https://www.gambleaware.org" target="_blank" rel="noopener noreferrer" aria-label="Visit GambleAware">
-                <Image
-                  src="/gambleaware.png"
-                  alt="GambleAware"
-                  width={220}
-                  height={56}
-                  className="h-9 w-auto sm:h-10"
-                />
-              </a>
-              <a href="https://www.gamcare.org.uk" target="_blank" rel="noopener noreferrer" aria-label="Visit GamCare">
-                <Image
-                  src="/gamcare.png"
-                  alt="GamCare"
-                  width={200}
-                  height={56}
-                  className="h-9 w-auto sm:h-10"
-                />
-              </a>
-              <a href="https://www.gamstop.co.uk" target="_blank" rel="noopener noreferrer" aria-label="Visit GAMSTOP">
-                <Image
-                  src="/gamestop.png"
-                  alt="GAMSTOP"
-                  width={210}
-                  height={56}
-                  className="h-9 w-auto sm:h-10"
-                />
-              </a>
-            </div>
+
+          <div>
+            <h5
+              className="font-black mb-3 text-[10px] uppercase tracking-[0.18em]"
+              style={{ color: 'rgba(244,185,66,0.55)' }}
+            >
+              Navigate
+            </h5>
+            <ul className="space-y-2">
+              {quickLinks.map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    className="text-white/40 text-sm transition-colors"
+                    style={{ ['--tw-hover-color' as string]: '#f4b942' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#f4b942')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '')}
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              className="font-black mb-3 text-[10px] uppercase tracking-[0.18em]"
+              style={{ color: 'rgba(244,185,66,0.55)' }}
+            >
+              Legal
+            </h5>
+            <ul className="space-y-2">
+              {legalLinks.map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    className="text-white/40 text-sm transition-colors"
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#f4b942')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '')}
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              className="font-black mb-3 text-[10px] uppercase tracking-[0.18em]"
+              style={{ color: 'rgba(244,185,66,0.55)' }}
+            >
+              Get Help
+            </h5>
+            <ul className="space-y-3">
+              {helpLinks.map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col gap-0.5 group"
+                  >
+                    <span
+                      className="text-white/40 text-sm group-hover:text-amber-400 transition-colors"
+                    >
+                      {l.label}
+                    </span>
+                    <span className="text-white/20 text-[11px]">{l.note}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-white/25 text-[11px]">Helpline: 0808 8020 133</p>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-4 sm:pt-6 text-center mt-6">
-          <p className="text-white/45 text-xs sm:text-sm">
-            &copy; 2026 sweetslotsuk.com. For informational purposes only. 18+ only. Please gamble responsibly.
+        <div className="section-rule mb-8" />
+
+        {/* Responsible gambling badges */}
+        <div className="mb-8">
+          <p
+            className="text-center text-[10px] uppercase tracking-[0.35em] font-black mb-4"
+            style={{ color: 'rgba(244,185,66,0.40)' }}
+          >
+            Safer Gambling
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-7">
+            <Image
+              src="/18plus.png"
+              alt="18+ only"
+              width={40}
+              height={40}
+              className="h-9 w-auto opacity-50 hover:opacity-90 transition-opacity"
+              priority
+            />
+            <a href="https://www.gambleaware.org" target="_blank" rel="noopener noreferrer" aria-label="GambleAware">
+              <Image
+                src="/gambleaware.png"
+                alt="GambleAware"
+                width={200}
+                height={50}
+                className="h-8 w-auto opacity-50 hover:opacity-90 transition-opacity"
+              />
+            </a>
+            <a href="https://www.gamcare.org.uk" target="_blank" rel="noopener noreferrer" aria-label="GamCare">
+              <Image
+                src="/gamcare.png"
+                alt="GamCare"
+                width={180}
+                height={50}
+                className="h-8 w-auto opacity-50 hover:opacity-90 transition-opacity"
+              />
+            </a>
+            <a href="https://www.gamstop.co.uk" target="_blank" rel="noopener noreferrer" aria-label="GAMSTOP">
+              <Image
+                src="/gamestop.png"
+                alt="GAMSTOP"
+                width={190}
+                height={50}
+                className="h-8 w-auto opacity-50 hover:opacity-90 transition-opacity"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div className="section-rule mb-6" />
+
+        {/* Disclaimer + copyright */}
+        <div className="text-center space-y-2">
+          <p className="text-white/25 text-xs leading-relaxed max-w-2xl mx-auto">
+            SweetSlots UK is an independent editorial comparison service. We may earn a commission
+            when you register via our links—this does not influence our rankings or reviews. Always
+            verify UKGC licensing before depositing. Gambling can be addictive; only stake what
+            you can afford to lose.
+          </p>
+          <p className="text-white/15 text-xs">
+            &copy; 2026 sweetslotsuk.com &nbsp;&middot;&nbsp; 18+ only &nbsp;&middot;&nbsp; For informational purposes only
           </p>
         </div>
       </div>
