@@ -334,6 +334,61 @@ export default async function Home({ searchParams }: PageProps) {
       </section>
 
       <Footer />
+
+      {/*
+        ── Google Ads Gambling Compliance Bar ────────────────────────────
+        This sticky bar is required for gambling landing pages:
+        - Visible 18+ age restriction
+        - Responsible gambling links
+        - Clear affiliate/commercial disclosure
+        Must remain accessible to AdsBot crawlers (not hidden by JS).
+      */}
+      <div
+        className="w-full py-3 px-4"
+        style={{ background: '#020407', borderTop: '1px solid rgba(244,185,66,0.08)' }}
+      >
+        <div className="container mx-auto max-w-5xl flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center">
+          <span
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black"
+            style={{ background: 'rgba(244,185,66,0.10)', border: '1px solid rgba(244,185,66,0.25)', color: '#f4b942' }}
+          >
+            18+ Only
+          </span>
+
+          <span className="text-white/25 text-[11px]">
+            Gambling can be addictive — please play responsibly.
+          </span>
+
+          <span className="text-white/20 text-[10px] hidden sm:inline">|</span>
+
+          <span className="text-white/25 text-[11px]">
+            <strong className="text-white/35">Affiliate disclosure:</strong>{' '}
+            We may earn commission from casino sign-ups. Rankings are editorial.
+          </span>
+
+          <span className="text-white/20 text-[10px] hidden sm:inline">|</span>
+
+          <div className="flex items-center gap-3 text-[11px]">
+            <a href="https://www.begambleaware.org" target="_blank" rel="noopener noreferrer"
+              style={{ color: 'rgba(244,185,66,0.55)' }}
+            >
+              BeGambleAware.org
+            </a>
+            <span className="text-white/15">·</span>
+            <a href="https://www.gamcare.org.uk" target="_blank" rel="noopener noreferrer"
+              style={{ color: 'rgba(244,185,66,0.55)' }}
+            >
+              GamCare.org.uk
+            </a>
+            <span className="text-white/15">·</span>
+            <a href="https://www.gamstop.co.uk" target="_blank" rel="noopener noreferrer"
+              className="transition-colors" style={{ color: 'rgba(244,185,66,0.55)' }}
+            >
+              GAMSTOP
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
