@@ -65,23 +65,25 @@ export default async function Home({ searchParams }: PageProps) {
               fast withdrawals, and real player feedback — so you play and win with confidence.
             </p>
 
-            {/* Stat chips */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
-              {[
-                { icon: '🛡', label: 'UKGC Licensed Only' },
-                { icon: '★', label: 'Editorial Picks' },
-                { icon: '⚡', label: 'Fast Payout Focus' },
-                { icon: '✓', label: '100% Independent' },
-              ].map((s) => (
-                <div
-                  key={s.label}
-                  className="flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-semibold text-white/60"
-                  style={{ background: 'rgba(244,185,66,0.05)', border: '1px solid rgba(244,185,66,0.14)' }}
-                >
-                  <span>{s.icon}</span>
-                  {s.label}
-                </div>
-              ))}
+            {/* Trust chips — horizontally scrollable on mobile */}
+            <div className="overflow-x-auto no-scrollbar -mx-4 px-4 mb-10">
+              <div className="flex items-center gap-2.5 min-w-max sm:min-w-0 sm:flex-wrap sm:justify-center">
+                {[
+                  { icon: '🛡', label: 'UKGC Licensed Only' },
+                  { icon: '★', label: 'Editorial Picks' },
+                  { icon: '⚡', label: 'Fast Payout Focus' },
+                  { icon: '✓', label: '100% Independent' },
+                ].map((s) => (
+                  <div
+                    key={s.label}
+                    className="flex items-center gap-2 flex-shrink-0 rounded-full px-4 py-2 text-xs sm:text-sm font-semibold text-white/60 whitespace-nowrap"
+                    style={{ background: 'rgba(244,185,66,0.05)', border: '1px solid rgba(244,185,66,0.14)' }}
+                  >
+                    <span>{s.icon}</span>
+                    {s.label}
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* CTAs */}
